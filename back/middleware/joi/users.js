@@ -5,8 +5,7 @@ const usersSchema = Joi.object({
 
     password: Joi.string()
         .min(8)
-        .max(15)
-        //.pattern(new RegExp('(?=^.{8,32}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'))
+        .max(16)
 });
 
 module.exports = usersSchema;
