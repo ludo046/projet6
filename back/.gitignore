@@ -1,5 +1,3 @@
 node_module/
-back/node_module
 
-back/*.txt
 *.env
