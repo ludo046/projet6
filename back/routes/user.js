@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const userCtrl = require('../controllers/user');
 
-
 const rateLimit = require("express-rate-limit");
 const createAccountLimiter = rateLimit({
     windowMs : 60 * 60 * 1000, // Fenêtre d'une heure
