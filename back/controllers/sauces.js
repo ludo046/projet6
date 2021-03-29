@@ -6,7 +6,7 @@ const { invalid } = require('joi');
 
 exports.createSauce = async (req, res, next) => {
     try{
-        const sauceObject = JSON.parse(req.body)
+        const sauceObject = JSON.parse(req.body.sauce)
         const valid = await schema.validateAsync(sauceObject)
         
         if (valid){
