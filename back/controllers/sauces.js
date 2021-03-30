@@ -35,21 +35,13 @@ exports.modifySauce = async(req, res, next) => {
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     } : { ...req.body};
 
-    const valid = await schema.validateAsync(sauceObject)
-
-    if (valid) {
         Sauce.updateOne({_id: req.params.id},{...sauceObject,_id: req.params.id})
         .then(() => res.status(200).json({message: 'objet modifié !' }))
         .catch( error => res.status(400).json({ error }));
-    } else {
-        throw error (invalid)
-    }
+        
     } catch (error) {
         res.status(400).json({ error })
-    }
-
-
-
+}
 }
 
 exports.deleteSauce = (req,res,next) => {
